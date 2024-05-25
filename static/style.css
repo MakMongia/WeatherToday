@@ -1,0 +1,156 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 20px auto;
+    margin-top: 80px;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: auto;
+}
+
+/* Dashboard Button Styles */
+.dashboard-button {
+    display: inline-block;
+    margin-right: auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dashboard-button:hover {
+    background-color: #45a049;
+}
+
+
+/* City Links */
+.city-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.city-links a {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    flex: 1 1 200px;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.city-links a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Main Content Styles */
+main {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px;
+}
+
+main h1 {
+    color: #333;
+}
+
+.weather-info {
+    margin-bottom: 20px;
+}
+
+.weather-info p {
+    margin: 5px 0;
+}
+
+/* Map Styles */
+#map {
+    height: 400px;
+    width: 40%;
+    min-width: 300px;
+}
+
+/* Form Styles */
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+main input[type="text"],
+main select {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+main input[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+main input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.description-info{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

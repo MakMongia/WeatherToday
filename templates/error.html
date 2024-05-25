@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>Weather Result</title>
+    <!-- Link to CSS files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<html>
+<head>
+    <title>Error</title>
+</head>
+<body>
+    <p>
+        "Oops! Something went wrong... It seems you have misspelled the city name or the name you entered isn't recognized by WeatherToday or our API partner, OpenWeatherMap. They're usually very good at providing weather information, although they've occasionally helped me get caught in the rain too. Can I kindly ask you to go back to our dashboard by clicking the link below and try again?"
+    </p>
+    <br> <!-- Extra line break -->
+    <p>
+        Thank you!
+    </p>
+    <br> <!-- Extra line break -->
+    <!-- Dashboard Button to Navigate Back -->
+    <a href="/" class="dashboard-button">Dashboard</a>
+</body>
+</html>

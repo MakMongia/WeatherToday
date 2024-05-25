@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Today</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Container for the Page Content -->
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <!-- Logo Image -->
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+        </header>
+        <!-- Navigation Section -->
+        <nav class="city-links">
+            <!-- Links to Different Cities with Metric Units -->
+            <a href="/weather?city=Cumbria&units=metric">Cumbria</a>
+            <a href="/weather?city=Corfe Castle&units=metric">Corfe Castle</a>
+            <a href="/weather?city=Cambridge&units=metric">Cambridge</a>
+            <a href="/weather?city=Bristol&units=metric">Bristol</a>
+            <a href="/weather?city=Oxford&units=metric">Oxford</a>
+            <a href="/weather?city=Norwich&units=metric">Norwich</a>
+            <a href="/weather?city=Stonehenge&units=metric">Stonehenge</a>
+            <a href="/weather?city=Birmingham&units=metric">Birmingham</a>
+        </nav>
+        <!-- Main Content Section -->
+        <main>
+            <!-- Heading -->
+            <h1>Weather Today</h1>
+            <!-- Form for City and Units Selection -->
+            <form method="POST" action="/weather">
+                <input type="text" name="city" placeholder="Enter city name" required>
+                <select name="units">
+                    <option value="metric">Celsius</option>
+                    <option value="imperial">Fahrenheit</option>
+                </select>
+                <input type="submit" value="Get Weather">
+            </form>
+        </main>
+    </div>
+</body>
+</html>

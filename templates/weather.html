@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Result</title>
+    <!-- Link to CSS files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Include Leaflet JavaScript library -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body class="container">
+    <!-- Header Section -->
+    <header>
+        <!-- Logo Image -->
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Display City Name -->
+        <h1>Weather in {{ city }}</h1>
+
+        <!-- Temperature Information -->
+        <div class="temperature-info">
+            <!-- Display Temperature and Units -->
+            <h2>{{ temperature }}° {{ units_display }}</h2>
+            <!-- Display Feels Like Temperature and Units -->
+            <p class="weather-info">Feels like: {{ feels_like }}° {{ units_display }}</p>
+        </div>
+
+        <!-- Display Weather Description and Icon -->
+        <p>{{ description }}</p>
+        <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="Weather Icon">
+
+        <!-- Additional Weather Information -->
+        <p class="weather-info">Pressure: {{ pressure }} hPa</p>
+        <p class="weather-info">Humidity: {{ humidity }}%</p>
+        <p class="weather-info">Wind: {{ wind_speed }} m/s ({{ wind_deg }}°)</p>
+        <p class="weather-info">Cloudiness: {{ cloudiness }}%</p>
+        <p class="weather-info">Sunrise: {{ sunrise_time }}</p>
+        <p class="weather-info">Sunset: {{ sunset_time }}</p>
+        <p class="weather-info">Latitude: {{ latitude }}</p>
+        <p class="weather-info">Longitude: {{ longitude }}</p>
+
+        <!-- Dashboard Button to Navigate Back -->
+        <a href="/" class="dashboard-button">Dashboard</a>
+    </main>
+
+    <!-- Map Section -->
+    <div id="map"></div>
+
+    <!-- JavaScript for Map Initialization -->
+    <script>
+        var map = L.map('map').setView([{{ latitude }}, {{ longitude }}], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([{{ latitude }}, {{ longitude }}]).addTo(map)
+            .bindPopup("<b>{{ city }}</b><br/>{{ temperature }}° {{ units_display }}")
+            .openPopup();
+    </script>
+</body>
+</html>
